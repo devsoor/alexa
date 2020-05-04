@@ -1,0 +1,28 @@
+{
+  "askcliStatesVersion": "2020-03-31",
+  "profiles": {
+    "default": {
+      "skillInfrastructure": {
+        "@ask-cli/lambda-deployer": {
+          "deployState": {
+            "default": {
+              "iamRole": "arn:aws:iam::937069053101:role/ask-lambda-musicspot-1588374387361",
+              "lambda": {
+                "arn": "arn:aws:lambda:us-east-1:937069053101:function:ask-musicspot-default-default-1588374388352",
+                "lastModified": "2020-05-03T22:10:15.200+0000",
+                "revisionId": "b469fcf0-ccf6-4c68-ae6e-1a1af3f98787"
+              }
+            }
+          }
+        }
+      },
+      "skillId": "amzn1.ask.skill.b9de0e3f-aa37-42ea-b9b2-2d5aa352e56a",
+      "skillMetadata": {
+        "lastDeployHash": "yfJAQ3GjBf4BazWGVNHyBvGW8FQ="
+      },
+      "code": {
+        "default": {}
+      }
+    }
+  }
+}

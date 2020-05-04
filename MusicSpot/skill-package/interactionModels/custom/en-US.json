@@ -1,0 +1,184 @@
+{
+    "interactionModel": {
+      "languageModel": {
+        "invocationName": "music spot",
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.NavigateHomeIntent",
+            "samples": []
+          },
+          {
+            "name": "UserFullnameIntent",
+            "slots": [
+              {
+                "name": "fullname",
+                "type": "AMAZON.Person"
+              }
+            ],
+            "samples": [
+              "It is {fullname}",
+              "My name is {fullname}"
+            ]
+          },
+          {
+            "name": "UserMusicIntent",
+            "slots": [
+              {
+                "name": "musictype",
+                "type": "MYMUSIC"
+              }
+            ],
+            "samples": [
+              "{musictype}",
+              "Let\u0027s do {musictype}",
+              "How about {musictype} ",
+              "I would like to listen to {musictype} today"
+            ]
+          },
+          {
+            "name": "UserMusicAuthPlayIntent",
+            "slots": [
+              {
+                "name": "artist",
+                "type": "AMAZON.Musician"
+              },
+              {
+                "name": "band",
+                "type": "AMAZON.MusicGroup"
+              }
+            ],
+            "samples": [
+              "Play the group {band}",
+              "Play group {band}",
+              "Play the {band} group",
+              "Play {artist}",
+              "Play {band}",
+              "Play music by {artist}"
+            ]
+          }
+        ],
+        "types": [
+          {
+            "values": [
+              {
+                "name": {
+                  "value": "pop"
+                }
+              },
+              {
+                "name": {
+                  "value": "hip hop"
+                }
+              },
+              {
+                "name": {
+                  "value": "blues"
+                }
+              },
+              {
+                "name": {
+                  "value": "jazz"
+                }
+              },
+              {
+                "name": {
+                  "value": "rock"
+                }
+              }
+            ],
+            "name": "MYMUSIC"
+          }
+        ]
+      },
+      "dialog": {
+        "intents": [
+          {
+            "name": "UserMusicIntent",
+            "confirmationRequired": true,
+            "prompts": {
+              "confirmation": "Confirm.Intent.470811215664"
+            },
+            "slots": [
+              {
+                "name": "musictype",
+                "type": "MYMUSIC",
+                "elicitationRequired": true,
+                "confirmationRequired": false,
+                "prompts": {
+                  "elicitation": "Elicit.Slot.1357411386145.357250960707"
+                }
+              }
+            ]
+          },
+          {
+            "name": "UserFullnameIntent",
+            "confirmationRequired": false,
+            "prompts": {},
+            "slots": [
+              {
+                "name": "fullname",
+                "type": "AMAZON.Person",
+                "elicitationRequired": true,
+                "confirmationRequired": false,
+                "prompts": {
+                  "elicitation": "Elicit.Slot.396020046343.404941560872"
+                }
+              }
+            ]
+          }
+        ],
+        "delegationStrategy": "SKILL_RESPONSE"
+      },
+      "prompts": [
+        {
+          "id": "Confirm.Intent.470811215664",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "You would like to listen to {musictype} music."
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.396020046343.404941560872",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Sorry, I didn\u0027t catch that, can you say it again?"
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.850290113904.511996448842",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Sorry I didn\u0027t catch that, can you say it again please?"
+            }
+          ]
+        },
+        {
+          "id": "Elicit.Slot.1357411386145.357250960707",
+          "variations": [
+            {
+              "type": "PlainText",
+              "value": "Sorry I didn\u0027t get that"
+            }
+          ]
+        }
+      ]
+    },
+    "version": "19"
+  }
